@@ -1,178 +1,533 @@
-
 import time
-# def no_respwan():
-#     (game over)
+import sys
+backpack = []
+
 
 def intro():
+    print("right now the world is in danger because there was a outbreak in the biohazard.")
+    time.sleep(0.6)
+    print(" ")
+    print("the outbreak has mutate the plant and human the plant now is 10x stronger")
+    time.sleep(0.6)
+    print(" ")
+    print("humans are infected by the zoonotic bridge rafflesia (ZBR)")
+    time.sleep(0.6)
+    print(" ")
+    alive = True
 
-    name = input("What is your name")
-    time.sleep(1)
-    print(" ")
-    print("Your name is",name)
-    time.sleep(1)
-    print()
-    print("You have woke up from your dream")
-    print(" ")
-    time.sleep(1)
-    print("Somthing is calling you")
-    print(" ")
-    time.sleep(1)
-    print("You follow the sound")
-    print(" ")
-    time.sleep(1)
-   
-def part_one():
     while True:
-        sea = input("It lead you to the beach (explore/stay home)").lower()
-        if sea == "explore":
-            print("You follow the the sound")
-            print(" ")
-            time.sleep
-            print("You got suck by a whirlpool")
-            print(" ")
-            time.sleep(1)
-            print("The whirlpool stop and there was a clock stuck on your back and you can't get it off")
-            print(" ")
-            time.sleep(1)
-            print ("The clock make you come back here every time you die")
-            print(" ")
-            time.sleep(1)
-            part_two()
+        first_step = input("everything start at 12:00 PM what will you do (save the world / do nothing): ").lower()
+        
+        if first_step == "do nothing":
+            print("you got the bad ending every one die")
+            alive = False
             break
 
-   
-        elif sea == "stay home":
-            print("You stay home and keep sleeping")
-            print("Game over")
-            print("Better luck next time")
+        elif first_step == "save the world":
+            print("you start your journey")
+            alive = True
+            break
+
+        else:
+            print("you miss spell try again")
+
+    return alive
+
+
+def shovel():
+    while True:
+        time.sleep(0.6)
+        print(" ")
+        choice = input("you found a Ruellia tuberosa (pick/leave): ").lower()
+        
+        if choice == "pick":
+            print("you pick it and store it in your backpack")
+            time.sleep(0.6)
+            print(" ")
+            backpack.append("Ruellia tuberosa")
+            biohazard_scene()
+            break
+
+        elif choice == "leave":
+            print("you miss on a very cool thing")
+            time.sleep(0.6)
+            print(" ")
+            biohazard_scene()
+            break
+
+        else:
+            time.sleep(0.6)
+            print(" ")
+            print("you miss spell")
+
+
+def biohazard_scene():
+    print("you pass by a biohazard")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        plant = input("do you want to go in (yes/no): ").lower()
+
+        if plant == "yes":
+            print("you go in and found an apple tree with a rafflesia around it you walk around a bit")
+            start()
             break
            
+        #there a bug on this one
+        elif plant == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("you step on a sundew plant it eat you")
+            sys.exit()
+        
         else:
-            print("Worng choice try again")
+            time.sleep(0.6)
             print(" ")
-            time.sleep(1)
-         
-def part_two():
-    print("You keep walking")
-    print(" ")
-    time.sleep(1)
-    print("You accidentally step on a mysterious egg")
-    print(" ")
-    time.sleep(1)
-    while True:
-        oct = input("The ground shake tentacles start a appear out of no where (run/stand)").lower()
-        time.sleep(1)
-        print(" ")
-        if oct == "run":
-            print("A rock hit you while running and you die")
-            print(" ")
-            time.sleep(1)
-            print("Better luck next time try again")
-        elif oct == "stand":
-            print("You got drag down by the tentacles")
-            time.sleep(1)
-            print(" ")
-            print("The tentacles drag to Challenger Deep and you saw a fraction of the thing draging you down")
-            challenger_deep()
-            break
-        else:
-            print("You miss spell try again")
-            print(" ")
-            time.sleep(1)
+            print("i didn't understand")
 
-def challenger_deep():
-    while True:
-        time.sleep(1)
-        print(" ")
-        guess = input("Guess what is dragging you down it big and have tentacles(kraken/cthulhu)").lower()
-        if  guess == "kraken":
-            print("You are correct ✓ kraken")
-            kraken_one()
-            break
 
-        elif guess == "cthulhu":
-            print("your worng ✕ ")
-            print(" ")
-            time.sleep(1)
-        else:
-            print("Worng you miss spell try  typing again!!")
-            print(" ")
-            time.sleep(1)
-
-def kraken_one():
-    print("The tentacles stop dragging you down")
-    time.sleep(1)
+def start():
+    time.sleep(0.6)
     print(" ")
+    print("and find a sheet of paper...")
+    time.sleep(0.6)
+    print(" ")
+    print("it say the only cure to ZBR is the golden apple")
+    time.sleep(0.6)
+    print(" ")
+    print("the rafflesia will destroy it in 2 day")
+    time.sleep(0.6)
+    print(" ")
+    print("the only rafflesia weakness is fire")
+    time.sleep(0.6)
+    print(" ")
+    print("the note end there")
+    time.sleep(0.6)
+    print(" ")
+    print("you need to find a way to get that golden apple")
+    time.sleep(0.6)
+    print(" ")
+    fight_scene()
+
+def fight_scene():
     while True:
-        light = input("The tentacles vanish you can't see anything you found a light (go/stay)")
-        time.sleep(1)
-        print(" ")
-        if light == "go":
-            print("You found a giant angler fish ")
-            time.sleep(1)
+            pepsii = input("what should you do 1(fight it) 2(run): ").lower()
+        
+            if pepsii == "1":
+                time.sleep(0.6)
+                print(" ")
+                print("you try to fight it but you are too weak and die")
+                sys.exit()
+                    
+        
+            elif pepsii == "2":
+                print("you run away but find no survivors")
+                time.sleep(0.6)
+                print(" ")
+                weapon()
+                break    
+                
+            else:
+                time.sleep(0.6)
+                print(" ")
+                print("Pick 1 or 2 try again")
+
+
+
+def weapon():
+    print("you didn't find any surviors so you decide to craft some weapon")
+    time.sleep(0.6)   
+    print( )
+    print("you go out to find some ingredient")
+    time.sleep(0.6)   
+    print( )
+    print("you know the rafflesia is weak to fire so you need ingredirnt to make waepon")
+    time.sleep(0.6)   
+    print( )
+    while True:
+        coming = input("Before you can do anything a group of infected come near you(fight/run/hide): ").lower()
+    
+        if coming == "fight":
+            time.sleep(0.6)
             print(" ")
-            print("it eat you adn you die")
-            print("better luck next time try again :)")
-        elif light == "stay":
-            print("The light fade away")
-            print("you found a glowing shell")
-            lion_fish()
+            print("You try to fight it but you got no weapon and die")
+            sys.exit()
+    
+        elif coming == "hide":
+            print("You try to hide behind a tree and it work the infected leave and you come out")
+            ingredirnt()
             break
+    
+        elif coming == "run":
+            time.sleep(0.6)
+            print(" ")
+            print("you maybe can outrun a 100 of zombie but not a 1000 you die")
+            sys.exit()
+            
         else:
-            print("Look like you miss spell try again")
-            Print(" ")
-            time.sleep
+            time.sleep(0.6)
+            print(" ")
+            print("pick between fight/run/hide")
             
 
-def lion_fish():
-    print("You pick up the glowing shell  right beside it there was a gun")
+
+
+
+def ingredirnt():
+    time.sleep(0.6)
+    print(" ")
+    print("After you run away from the infected you found a pine tree sap")
+    time.sleep(0.6)
+    print(" ")  
+    print("you pick the sap for the ingredirnt and store it in a jar")
+    time.sleep(0.6)
+    print(" ")   
+    backpack.append("sap in a jar")
+    print(backpack)
+    time.sleep(0.6)   
+    print(" ")
+    print("the ingredirnt for a fire weapon is")
+    time.sleep(0.6)   
+    print(" ")
+    print("(pine tree sap/lighter/stick)")
+    time.sleep(0.6)   
+    print(" ")
+    print("So you got to search for a lighter")
+    time.sleep(0.6)   
+    print(" ")
+    print("You didn't find anything but a abandoned camp")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        survivors = input("should you investigate the camp(yes/no)").lower()
+    
+        if survivors == "yes":
+            print("You investigate the camp and found a backpack inside that it a lighter")
+            group()
+            break
+            
+        elif survivors == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("you didn't investigate the camp so you go out in forest and a infected kill you")
+            sys.exit()
+    
+        else:
+            time.sleep(0.6)
+            print(" ")
+            print("pick between (yes/no)")
+    
+def group():
+    time.sleep(0.6)
+    print(" ")
+    print("all you need left is a stick so you pick some random stick on the ground")
+    backpack.append("stick")
+    time.sleep(0.6)
+    print(" ")
+    print(backpack)
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        craft = input("You got a stick that is your last ingredirnt do you want to craft it (yes/no)")
+    
+        if craft == "yes":
+            #part for checking if the backpack have the ingredirnt 
+            print("you caft the flamethrower")
+            backpack.append("flamethrower")
+            weapon_test()
+            break
+
+    
+        elif craft == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("what are you saving that in ingredirnt for 🧐")
+            weapon_test()
+            break
+    
+        else:
+            time.sleep(0.6)
+            print(" ")
+            print("you miss spell")
+
     
 
+def weapon_test():
+    time.sleep(0.6)
+    print(" ")
+    print("you got the flamethrower but you want to test if it work")
+    time.sleep(0.6)
+    print(" ")
+    print("so you find a group of infected and try to use it")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        test = input("do you want to test it (yes/no)").lower()
+    
+        if test == "yes":
+            if "flamethrower" in backpack:
+                print("you test it and it work you burn the infected and you are ready to fight the rafflesia")
+                first_round()
+                break
+            else:
+                time.sleep(0.6)
+                print(" ")
+                print("you don't have the flamethrower so you can't test it and the infected kill you")
+                sys.exit()
+            
+        elif test == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("you don't test it and go to fight the rafflesia so you don't now how to use it and die")
+            sys.exit()
 
+        else:
+            print("you miss spell")
 
+def first_round():
+    time.sleep(0.6)
+    print(" ")
+    print("you go to the biohazard again to fight the rafflesia")
+    time.sleep(0.6)
+    print(" ")
+    print("it grow bigger and stronger and the golden apple is almost destroyed the time right now is 11:00 AM")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        fight = input("do you want to fight it now (yes/no)").lower()
+    
+        if fight == "yes":
+            time.sleep(0.6)
+            print(" ")
+            print("you try to fight it but you are not strong enough and die")
+            sys.exit()
 
+            
+        elif fight == "no":
+            print("your thinking a plan right now but the there no time left the rafflesia destroy the golden apple and will everyone die")
+            close()
+            break
 
+        else:
+            time.sleep(0.6)
+            print(" ")   
+            print("you miss spell")
+#FIXING HERE OTHER IN THE BACK IS FIX
 
+def close():
+    time.sleep(0.6)
+    print(" ")
+    print("you go to fight the rafflesia but the rafflesia it start to become stronger")
+    time.sleep(0.6)
+    print(" ")
+    print("the rafflesia fully grow and the golden apple is destroy")
+    time.sleep(0.6)
+    print(" ")
+    print("you don't know what to do so you just rush in")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        rush = input("you rush in to kill but it try to grab you what should you do 1(burn it) 2 move out)(1/2)").lower()
+    
+        if rush == "1":
+            time.sleep(0.6)
+            print(" ")
+            print("you try to burn it but the flamethrower can't burn it fast enough and the rafflesia grab you and you die")
+            sys.exit()
+            
+        elif rush == "2":
+            print("you try to move out of the way and it work the rafflesia miss you got a chance to stike")
+            teammate()
+            break
+            
+        else:
+            print("pick between 1 or 2 try again")
+            
+def teammate():
+    time.sleep(0.6)
+    print(" ")
+    print("you got a chance to strike the rafflesia but you are not strong enough to kill it alone")      
+    time.sleep(0.6)
+    print(" ")
+    print("you need to find a teammate to help you fight the rafflesia")
+    time.sleep(0.6)
+    print(" ")   
+    while True:
+        teammate = input("you retreat to find a survivor to help you fight the rafflesia do you want to look for a teammate (yes/no)").lower()
+        
+        if teammate == "yes":
+            print("you look for a trace of survior and you find footprint you follow it and find a cave")
+            cave()
+            break
+            
+        elif teammate == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("you don't look for a teammate and go back to fight the rafflesia but you are not strong enough and die")
+            sys.exit()
+            
+        else:
+            print("pick between yes or no try again")
+            
+def cave():
+    time.sleep(0.6)
+    print(" ")
+    print("you use the flamethrower to light up a torch located where the footprint")
+    time.sleep(0.6)
+    print(" ")
+    print("you follow the torch light and find a survivor hiding in the cave")
+    time.sleep(0.6)
+    print(" ")
+    print("the survivor try to attack you but try to talk to him and find out he not alone there is a group of survivor hiding in the cave")
+    time.sleep(0.6)
+    print(" ")
+    print("you talk to the survivor and find out they are also trying to find a way to kill the rafflesia and they want to join you to fight the rafflesia it been 1 and a half day")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        number = input("you do want to join them (yes/no)").lower()
+        
+        if number == "yes":
+            print("you join the survior to fight the rafflesia together")
+            team()
+            break
+        
+        elif number == "no":
+            time.sleep(0.6)
+            print(" ")
+            print("you didn't join the survior and go back alone you got killed by the rafflesia")
+            sys.exit()
+        
+        else:
+            print("pick between yes or no try again")
+            
+            
+            
+def team():
+    time.sleep(0.6)
+    print(" ")
+    print("you had a team to fight the rafflesia but the rafflesia almost destroy the golden apple you need to fight it now the time right now is 1:00 AM")
+    time.sleep(0.6)
+    print(" ")
+    time.sleep(0.6)
+    print(" ")
+    print("one hr pass the rafflesia has full destroy the golden apple the virus has virus spread all around the world")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+        fight = input("you reach the biohazrd and the rafflesia is ready for you(go in/stay back)").lower()
+        
+        if fight == "go in":
+            print("you go in and fight the rafflesia together you burn it eye you is blind for a second")
+            time.sleep(0.6)
+            print(" ")
+            print("you take the chance to strike the rafflesia and you did it you hit it in the head")
+            last_round()
+            break
+            
+        elif fight == "stay back":
+          time.sleep(0.6)
+          print(" ")
+          print("you stay in the back but you trip on a rock a you land on your head and die")
+          sys.exit()
+        
+        
+        else:
+          print("you miss spell")
+    
+    
+    
+def last_round():
+    time.sleep(0.6)
+    print(" ")
+    print("the rafflesia is not very weak it call all the infected")
+    time.sleep(0.6)
+    print(" ")
+    print("all your teammate your injured so you got to do it my yourself")
+    time.sleep(0.6)
+    print(" ")
+    while True:
+      swam = input("all the infected is in one place what should you do 1 rush in 2 defend your teammate (1/2)")
+      
+      if swam == "1":
+        print("you rush in kill and infected in your way with your weapon")
+        last_run()
+        break
+      
+      
+      elif swam == "2":
+        time.sleep(0.6)
+        print(" ")
+        print("you project your teammate but they one be getting up soon the zombie overwhelmed and die ")
+        sys.exit()
+      
+      else:
+        print("pick between 1/2")
+        
+      
+      
+def last_run():
+  time.sleep(0.6)
+  print(" ")
+  print("you keep running unit you ran out of fual")
+  time.sleep(0.6)
+  print(" ")
+  print("you reach the rafflesia but you ran out of fual")
+  time.sleep(0.6)
+  print(" ")
+  while True:
+    HIT = input("you infront of the rafflesia you got 2 choice ONE (you use the stick part of the flamethrow as a sword)TWO(use other plan) (1/2)")
+    
+    if HIT == "1":
+      time.sleep(0.6)
+      print(" ")
+      print("you rush in and jump on the rafflesia and stab it in the middle but it didn't work and the infected kill you")
+      sys.exit()
+      
+     #BUG HERE FIXING 
+    elif HIT == "2":
+      print("You need to come up with something you see a puddle of water that gave you a idea")
+      time.sleep(0.6)
+      print(" ")
+      print("you use the jar that store your pine tree sap")
+      time.sleep(0.6)
+      print(" ")
+      nothing()
+      break
+      
+      
+    else:
+      print("Pick 1 or 2")
+    
+    
+def nothing():
+    while True:
+        
+        if "Ruellia tuberosa" in backpack:
+            print("you store the water in a jar and told the Ruellia tuberosa in")
+            time.sleep(0.6)
+            print(" ")
+            print("You jump on to the rafflesia and stick the jar inside the rafflesia the rafflesia explode and you win but the golden apple is destroy")
+            win()
+            break
+    
+        elif "Ruellia tuberosa" not in backpack:
+            print("you didn't have the Ruellia tuberosa and you can't do anything with a jar of water so sadly the rafflesia kill you")  
+            sys.exit()
+   
+def win():
+    time.sleep(0.6)
+    print(" ")
+    print("luckily there one golden apple seed one the ground you plant it and it grow into a golden apple tree and save the world")  
+    sys.exit()
 
+  
+   
+   
+         
+alive = intro()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-intro()
-part_one()
-
-
-
-
-
-
-
-# time.sleep(1)
-# print(" ")
-# guess = input("guess what is draging you down it big and have tentacles(kraken/cthulhu)").lower()
-# if guess == "kraken":
-#     print("you are correct ✓ ")
-# else:
-#     print("your wrong ✕ ")
-# print("the tentacles stop dragging you down")
-# time.sleep(1)
-# print(" ")
-# print("the tentacles vanish and your feeling hungry")
-# time.sleep(1)
-# print(" ")
-# food = input("you found glowing seawee will you eat it yes/no")
-# if food == yes:
-#     print("you eat the seawee and die")
-# else:
-#     print("you didnt eat the seawee and you found a ")
-
+if alive:
+    shovel()
+    biohazard_scene()
+    fight_scene()
